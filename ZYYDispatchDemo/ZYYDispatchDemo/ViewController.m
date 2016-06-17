@@ -32,7 +32,7 @@
     [super viewDidLoad];
     
     dispatch_group_t group  = dispatch_group_create(); // 创建一个线程组
-    dispatch_queue_t dispatchQueue = dispatch_queue_create("serialQueue", DISPATCH_QUEUE_SERIAL); // 创建一个并行队列
+    dispatch_queue_t dispatchQueue = dispatch_queue_create("serialQueue", DISPATCH_QUEUE_SERIAL); // 创建一个串行队列
     
     dispatch_group_async(group, dispatch_get_global_queue(0,0), ^{
         // 并行执行第一组中线程中的一个任务
